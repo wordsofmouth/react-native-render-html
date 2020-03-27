@@ -124,7 +124,9 @@ export default class HTMLImage extends PureComponent {
           {
             width: this.state.width,
             height: this.state.height,
-            resizeMode: "cover"
+            resizeMode: "cover",
+            justifyContent: "center",
+            alignSelf: "center"
           }
         ]}
         {...props}
