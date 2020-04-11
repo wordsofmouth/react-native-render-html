@@ -7,7 +7,7 @@ export default class HTMLImage extends PureComponent {
     super(props);
     this.state = {
       width: props.imagesInitialDimensions.width,
-      height: props.imagesInitialDimensions.height
+      height: props.imagesInitialDimensions.height,
     };
   }
 
@@ -20,15 +20,15 @@ export default class HTMLImage extends PureComponent {
     imagesMaxWidth: PropTypes.number,
     imagesInitialDimensions: PropTypes.shape({
       width: PropTypes.number,
-      height: PropTypes.number
-    })
+      height: PropTypes.number,
+    }),
   };
 
   static defaultProps = {
     imagesInitialDimensions: {
-      width: 100,
-      height: 100
-    }
+      width: 400,
+      height: 400,
+    },
   };
 
   componentDidMount() {
@@ -55,7 +55,7 @@ export default class HTMLImage extends PureComponent {
       styleWidth = width;
     }
     if (Array.isArray(style)) {
-      style.forEach(styles => {
+      style.forEach((styles) => {
         if (!width && styles["width"]) {
           styleWidth = styles["width"];
         }
@@ -106,7 +106,7 @@ export default class HTMLImage extends PureComponent {
           this.setState({
             width: optimalWidth,
             height: optimalHeight,
-            error: false
+            error: false,
           });
       },
       () => {
@@ -124,11 +124,12 @@ export default class HTMLImage extends PureComponent {
           {
             width: this.state.width,
             height: this.state.height,
-            resizeMode: "cover",
             justifyContent: "center",
-            alignSelf: "center"
-          }
+            alignSelf: "center",
+          },
         ]}
+        resizeMethod="resize"
+        resizeMode="cover"
         {...props}
       />
     );
@@ -143,7 +144,7 @@ export default class HTMLImage extends PureComponent {
           borderWidth: 1,
           borderColor: "lightgray",
           overflow: "hidden",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         {this.props.alt ? (
