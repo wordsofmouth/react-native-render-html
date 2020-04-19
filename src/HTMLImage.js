@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Image, View, Text } from "react-native";
 import PropTypes from "prop-types";
+import AutoHeightImage from "react-native-auto-height-image";
 
 export default class HTMLImage extends PureComponent {
   constructor(props) {
@@ -117,21 +118,22 @@ export default class HTMLImage extends PureComponent {
 
   validImage(source, style, props = {}) {
     return (
-      <Image
-        source={source}
-        style={[
-          style,
-          {
-            width: this.state.width,
-            height: this.state.height,
-            justifyContent: "center",
-            alignSelf: "center",
-          },
-        ]}
-        resizeMethod="resize"
-        resizeMode="cover"
-        {...props}
-      />
+      // <Image
+      //   source={source}
+      //   style={[
+      //     style,
+      //     {
+      //       width: this.state.width,
+      //       height: this.state.height,
+      //       justifyContent: "center",
+      //       alignSelf: "center",
+      //     },
+      //   ]}
+      //   resizeMethod="resize"
+      //   resizeMode="cover"
+      //   {...props}
+      // />
+      <AutoHeightImage source={source} width={this.props.imagesMaxWidth} />
     );
   }
 
