@@ -16,9 +16,13 @@
     "buffer": "^4.5.1",
     "events": "^1.1.0",
     "html-entities": "^1.2.0",
+<<<<<<< HEAD
     "htmlparser2": "^4.0.0",
     "react-native-auto-height-image": "2.0.0",
     "react-native-hyperlink": "^0.0.19"
+=======
+    "htmlparser2": "^4.0.0"
+>>>>>>> parent of 4d326b1... introduce auto image height
   },
   "peerDependencies": {
     "prop-types": ">=15.5.10",

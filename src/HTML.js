@@ -570,10 +570,7 @@ export default class HTML extends PureComponent {
 
           const classStyles = _getElementClassStyles(attribs, classesStyles);
           const textElement = data ? (
-            <Hyperlink
-              onPress={(url, text) => Linking.openURL(url)}
-              linkStyle={{ color: "#2980b9" }}
-            >
+            
               <Text
                 allowFontScaling={allowFontScaling}
                 style={computeTextStyles(element, {
@@ -589,7 +586,7 @@ export default class HTML extends PureComponent {
               >
                 {data}
               </Text>
-            </Hyperlink>
+            
           ) : (
             false
           );
